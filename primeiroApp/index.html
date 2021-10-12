@@ -4,7 +4,7 @@
 <div id="app">
     <h1>Primeiro app</h1>
     <p>Bem vindo, {{nome}}</p>
-    <p>{{ bemVindo() }}</p>
+    <a v-bind:href="canal" target="blank">Canal Youtube</a>
 </div>
 
 <script>
@@ -13,13 +13,8 @@
         data(){  // Propriedades que poderão ser na View (Interpolação)
             return {
                 nome: 'Wellington',
-                idade: 28
+                canal: 'https://youtube.com' // através da propriedade v-bind sera uma ligação com o href da tag "a"
             }
-        },
-        methods:{  // funcoes devem sera declaradas dentro de methods
-            bemVindo(){
-                return 'Bem vindo ' + this.nome
-            }
-        } 
+        }
     })
 </script>
