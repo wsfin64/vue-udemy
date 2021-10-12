@@ -1,11 +1,18 @@
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!-- Utilizando vue sem instalação -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
 
 <div id="app">
     <h1>Primeiro app</h1>
+    <p>Bem vindo, {{nome}}</p>
 </div>
 
 <script>
-    new Vue({
-        el: '#app'
+    new Vue({ // instanciando um elemento vue
+        el: '#app',
+        data(){  // Propriedades que poderão ser usadados na View
+            return {
+                nome: 'Wellington'
+            }
+        } 
     })
 </script>
