@@ -2,28 +2,27 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
 
 <div id="app">
-    <h1>Primeiro app</h1>
-    <p v-once>Usuario: {{nome}}</p>
-    <!-- <a v-bind:href="canal" target="blank">Canal Youtube</a> -->
-
-    <p>Bem vindo {{ entrar() }}</p>
+    <h1>Contador</h1>
+    <button v-on:click="subtrarir">-</button>
+        <span>{{numero}}</span>
+    <button v-on:click="somar">+</button>
 </div>
 
 <script>
     new Vue({ // instanciando um elemento vue
         el: '#app',
-        data(){  // Propriedades que poderão ser na View (Interpolação)
+        data(){
             return {
-                nome: 'Wellington',
-                canal: 'https://youtube.com' // através da propriedade v-bind sera uma ligação com o href da tag "a"
+                numero: 0
             }
         },
         methods:{
-            entrar(){
-                this.nome = 'Radar'
-                return this.nome;
+            somar(){
+                this.numero += 1;
+            },
+            subtrarir(){
+                this.numero -= 1;
             }
         }
-
     })
 </script>
