@@ -3,11 +3,10 @@
 
 <div id="app">
     <h1>Primeiro app</h1>
-    <p>Usuario: {{nome}}</p>
+    <p v-once>Usuario: {{nome}}</p>
     <!-- <a v-bind:href="canal" target="blank">Canal Youtube</a> -->
 
-    <button v-on:click="entrar(5)">Entrar</button>
-    <button v-on:click.once="entrar(5)">Numero 5 Once</button>    <!-- O .once permite executar a função apenas uma vez-->
+    <p>Bem vindo {{ entrar() }}</p>
 </div>
 
 <script>
@@ -20,9 +19,11 @@
             }
         },
         methods:{
-            entrar(numero){
-                this.nome += numero;
+            entrar(){
+                this.nome = 'Radar'
+                return this.nome;
             }
         }
+
     })
 </script>
