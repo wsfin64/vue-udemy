@@ -3,8 +3,10 @@
 
 <div id="app">
     <h1>Primeiro app</h1>
-    <p>Bem vindo, {{nome}}</p>
-    <a v-bind:href="canal" target="blank">Canal Youtube</a>
+    <p>Usuario: {{nome}}</p>
+    <!-- <a v-bind:href="canal" target="blank">Canal Youtube</a> -->
+
+    <button v-on:click="entrar">Entrar</button>
 </div>
 
 <script>
@@ -14,6 +16,11 @@
             return {
                 nome: 'Wellington',
                 canal: 'https://youtube.com' // através da propriedade v-bind sera uma ligação com o href da tag "a"
+            }
+        },
+        methods:{
+            entrar(){
+                this.nome = 'Sujeito Programador'
             }
         }
     })
