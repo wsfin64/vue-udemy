@@ -4,14 +4,21 @@
 <div id="app">
     <h1>Primeiro app</h1>
     <p>Bem vindo, {{nome}}</p>
+    <p>{{ bemVindo() }}</p>
 </div>
 
 <script>
     new Vue({ // instanciando um elemento vue
         el: '#app',
-        data(){  // Propriedades que poderão ser usadados na View
+        data(){  // Propriedades que poderão ser na View (Interpolação)
             return {
-                nome: 'Wellington'
+                nome: 'Wellington',
+                idade: 28
+            }
+        },
+        methods:{  // funcoes devem sera declaradas dentro de methods
+            bemVindo(){
+                return 'Bem vindo ' + this.nome
             }
         } 
     })
